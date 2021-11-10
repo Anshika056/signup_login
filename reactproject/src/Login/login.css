@@ -1,0 +1,16 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-image: url(bt21.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
