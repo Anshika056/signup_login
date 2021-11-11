@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Login.css"
 import { Link } from "react-router-dom";
 
@@ -6,10 +6,11 @@ import { Link } from "react-router-dom";
 
 function Login(){
 
-    const [userData , setUserData] = useState({                //userdata=currentdata and setuserdata=updated data
-        email:"",                                                 //inital state in usestate
-        password:"",                                             //inital stage of signin form
-       });
+  //  const [userData , setUserData] = useState({                //userdata=currentdata and setuserdata=updated data
+      //  email:"",                                                 //inital state in usestate
+     //   password:"",                                             //inital stage of signin form
+//});
+       
     return(
         <>
         <div className="container">
@@ -35,11 +36,10 @@ function Login(){
      <div className="login-button">
          <button>Login</button>
      </div>
-     <div className="sign-inlink">Not registered? <span>Create an account<Link to="/signup"></Link> 
-          </span></div>
-
+     <div className="sign-inlink">
+     Not registered? <span>Create an account</span> 
+      <Link to="./Signup/Signup"></Link></div>
         </div>
-
         </div>
     
      </>

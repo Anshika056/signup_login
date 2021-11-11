@@ -1,0 +1,83 @@
+*{
+    padding: 0%;
+    margin: 0%;
+    box-sizing: border-box;
+    font-family: sans-serif;
+   
+}
+.container{
+    height: 100%;
+    width: 100%;
+    background-image: url(bt21.jpg);
+    background-position:center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    position: absolute;
+}
+.signup-box{
+    background-color: rgba(0,0,0,0.55);
+	position: absolute;
+	top:50%;
+	left:50%;
+	transform: translate(-50%, -46%);
+	padding-top: 10px;
+    padding-bottom: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 15px;
+    border-color:#d2d2d2;
+    border-width: 5px;
+    box-shadow:-10px -10px 9px #ccddff;
+
+}
+h2{
+    margin: 10px;
+	font-size:40px;
+	color:rgb(88, 150, 221);
+	text-align: center;
+}
+p{ 
+    color:rgb(88, 150, 221);
+    margin-right: 150px;
+    padding:5px;
+    font-weight: bold;
+    font-size: larger;
+ }
+ .email input, .password input, .username input{
+	width:100%;
+	margin-bottom: 10px;
+}
+input[type="text"], input[type="password"] , input[type="email"]{
+	border:none;
+	border-bottom: .5px solid #fff;
+	background: transparent; 
+	outline:none;
+	height:40px;
+	color: white;
+	font-size: 15px;
+}
+.signupbutton button{
+    border:none;
+    outline:none;
+    background: rgb(88, 150, 221);;
+    font-size: 20px;
+    color:#fff;
+    border-radius: 35px;
+    font-weight: bold;    
+    width: 50%;
+}
+.login-link{
+text-decoration: none;
+color:rgb(233, 12, 12);
+font-size:18px;
+line-height:15px;
+padding-top: 10px;
+}
+.login-link:hover{
+color:white;
+}
+.errorbox{
+color: whitesmoke;
+font-size: large;
+padding: 10px;
+}
