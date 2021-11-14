@@ -43,7 +43,7 @@ function Signup(){
     </div>
     <div className="login-link">
       Already registered? Login!
-      <Link to="./Login/Login"></Link>
+      <Link to="/"></Link>
     </div>
 
     </div>

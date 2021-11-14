@@ -37,8 +37,8 @@ function Login(){
          <button>Login</button>
      </div>
      <div className="sign-inlink">
-     Not registered? <span>Create an account</span> 
-      <Link to="./Signup/Signup"></Link></div>
+     Not registered? Create an account 
+      <Link to="/Signup"></Link></div>
         </div>
         </div>
     
