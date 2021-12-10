@@ -10,6 +10,7 @@ require("./database/connect");                                  // linking the d
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+const User = require('./models/userSchema'); 
 
 app.listen(PORT,()=>{
     console.log(`server is started at ${PORT}`);     //server running an connected
