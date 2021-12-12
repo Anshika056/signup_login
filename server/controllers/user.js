@@ -14,12 +14,13 @@ exports.signup=async (req,res)=>{
                  if(userexists){
                        res.send("user already exists");
                  }else if (password != retypepassword)
-                     {
-                        res.send("password are not same");
+                   {
+                       return res.status(400).json({message:"password are not same"});
                   }
+
               const users = new User ({username,email,password,retypepassword});
               const signup = await users.save();
-              console.log(signup)
+            //  console.log(signup)
      
         if(signup){
           res.status(200).json({message:"user has been Signed up!"});
@@ -48,10 +49,10 @@ try{
               const comparepass = await bcrypt.compare(password, login.password);
 
                  if(comparepass){
-                     res.status(200).json({message:"user login successfull"});
+                  res.status(200).json({message:"user login successfull"}); 
                     }
                 else{
-                   res.send("invaild password entered");
+                  res.send("invaild password entered");
                  }
                  }  
              else{
