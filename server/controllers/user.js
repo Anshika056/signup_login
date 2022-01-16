@@ -8,7 +8,7 @@ exports.signup=async (req,res)=>{
         if(!username || !email || !password || !retypepassword ){
               res.status(400).json({message:"enter all the details"});
         }
-         console.log("user check");
+         //console.log("user check");
       try{ 
              const userexists = await User.findOne({email});
                  if(userexists){
@@ -20,7 +20,7 @@ exports.signup=async (req,res)=>{
 
               const users = new User ({username,email,password,retypepassword});
               const signup = await users.save();
-            //  console.log(signup)
+              console.log(signup)
      
         if(signup){
           res.status(200).json({message:"user has been Signed up!"});

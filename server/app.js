@@ -8,13 +8,16 @@ const PORT=process.env.PORT                                     //the port in en
 require("./database/connect");                                  // linking the database to app 
 
 const userroutes = require("../server/routes/user");
+const catroutes = require("../server/routes/category");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
 const User = require('./models/userSchema');
+const Category = require("./routes/category");
 
 app.use("/api",userroutes);
+app.use("/api",catroutes);
 
 app.listen(PORT,()=>{
     console.log(`server is started at ${PORT}`);     //server running an connected
