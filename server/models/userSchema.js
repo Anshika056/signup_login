@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const bcrypt = require("bcrypt");
 const validator=require("validator")
-// const jwt = require("jsonwebtoken");
+const jwt = require("jsonwebtoken");
 require("dotenv").config();
 
 const userSchema = new mongoose.Schema({
@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
         lowercase:true
     },
     email:{
-        type:String,
+        type:String, 
         required: true,
         trim: true,
         unique: true,
@@ -42,11 +42,11 @@ userSchema.pre("save",async function(next){                   // to  bcrpty the 
     next();
 })
 
-// userSchema.methods.genToken = async () =>{
-//      const token = await jwt.sign({_id:this._id},process.env.SECRET_KEY);
-//      return token;
+userSchema.methods.genToken = async () =>{                                //generation of the token  
+     const token = await jwt.sign({_id:this._id},process.env.SECRET_KEY);    //token generation with id and secret key
+     return token;          
 
-// }
+}
 
 const User = new mongoose.model("USER",userSchema);
 

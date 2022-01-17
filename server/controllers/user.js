@@ -19,11 +19,16 @@ exports.signup=async (req,res)=>{
                   }
 
               const users = new User ({username,email,password,retypepassword});
+              
+              const token = await users.genToken();
+              console.log(token);
+
               const signup = await users.save();
               console.log(signup)
      
         if(signup){
-          res.status(200).json({message:"user has been Signed up!"});
+          
+         res.status(200).send({user:signup,token})
           }
          else{
           res.send("error!");
