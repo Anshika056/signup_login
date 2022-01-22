@@ -1,5 +1,5 @@
 import React from "react";
-import "./Login.css"
+import "./login.css"
 import { Link } from "react-router-dom";
 
 
@@ -11,6 +11,9 @@ function Login(){
      //   password:"",                                             //inital stage of signin form
 //});
        
+const alertlogin=()=>{
+    alert("login done");
+}
     return(
         <>
         <div className="container">
@@ -34,11 +37,11 @@ function Login(){
         </div>
      <div className="errorbox"></div>
      <div className="login-button">
-         <button>Login</button>
+         <button onClick={alertlogin}>Login</button>
      </div>
      <div className="sign-inlink">
-     Not registered? Create an account 
-      <Link to="/Signup"></Link></div>
+     Not registered? 
+      <Link to="/">Create an account </Link></div>
         </div>
         </div>
     
