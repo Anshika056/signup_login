@@ -1,4 +1,4 @@
-import React from "react";
+import React ,{useState} from "react";
 import "./login.css"
 import { Link } from "react-router-dom";
 
@@ -6,10 +6,16 @@ import { Link } from "react-router-dom";
 
 function Login(){
 
-  //  const [userData , setUserData] = useState({                //userdata=currentdata and setuserdata=updated data
-      //  email:"",                                                 //inital state in usestate
-     //   password:"",                                             //inital stage of signin form
-//});
+   const [logindata, setLogin] = useState({                //userdata=currentdata and setuserdata=updated data
+       email:"",                                                 //inital state in usestate
+       password:"",                                             //inital stage of signin form
+});
+
+const setlogin=(e) =>{
+    const {name,value} = e.target
+    setLogin({...logindata,[name]:value});
+}
+
        
 const alertlogin=()=>{
     alert("login done");
@@ -24,6 +30,8 @@ const alertlogin=()=>{
         <input 
             type="text"
             name="email"
+            value={logindata.email}
+            onChange={setlogin}
             placeholder="Enter your valid email-id"
         />
         </div>
@@ -32,6 +40,8 @@ const alertlogin=()=>{
         <input
             type="password"
             name="password"
+            value={logindata.password}
+            onChange={setlogin}
             placeholder="Enter your password"
             />
         </div>

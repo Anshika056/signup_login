@@ -20,8 +20,9 @@ function Signup(){
      } 
 
 
-    const alertsignup=()=>{
-        alert("signup done");
+     const alertsignup=()=>{
+     alert("signup done");
+        
     }
     return(
         <>
