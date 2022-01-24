@@ -3,7 +3,7 @@ import "./Signup.css"
 import "./validation"
 import { Link } from "react-router-dom";
 import validation from "./validation";
-
+import axios from "axios";
 
 function Signup(){
 
@@ -24,15 +24,27 @@ function Signup(){
 
      const [errors,setErrors] = useState({})         //usestate for the errors
      
-          const sendData = async ()=>{
-              setErrors(validation(userdata));
-            //   setuserData({
-            //     username: "",
-            //     email: "",
-            //     mobile: "",
-            //     password: "",
-            //     retypepassword: "",
-            //   });
+          const sendData = async (e)=>{
+              e.preventDefault();
+              console.log("ki");
+              if(setErrors(validation(userdata))){
+              }
+              else {
+                    await axios.post("http://localhost:4000/api/signup", userdata)
+                  .then((res)=>{
+                        alert("signup done");
+                        setuserData({
+                                username: "",
+                                email: "",
+                                mobile: "",
+                                password: "",
+                                retypepassword: "",
+                              });
+                    }).catch((err) =>{
+                        console.log(err);
+                    })
+              }
+
             //   alert("signup done");   
     }
    
